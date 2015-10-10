@@ -12,7 +12,7 @@ angular.module('parseService', ['ngResource'])
     name: 'Parse',
 
     login: function login(username, password, done) {
-      Parse.User.login(username, password, {
+      Parse.User.logIn(username, password, {
         success: function(user) {
           loggedInUser = user;
           done();
