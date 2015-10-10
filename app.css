@@ -1,0 +1,62 @@
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#almari{
+	
+	margin-top: 15%;
+	margin-bottom: 10%;
+}
+#alm{
+	font-size: 6em;
+	font-family: 'Mr De Haviland', cursive;
+	color: #F25F5C;
+}
+
+#sub{
+	font-size: 1em;
+	font-family: 'Lato', sans-serif;
+	margin-top: -20px;
+	font-weight: 700;
+	color: #50514F;
+}
+
+.sec1{
+	margin-right: -10%;
+	margin-left: -10%; 
+	background-color: #F25F5C;
+	color: white;
+}
+
+#toprow{
+	margin-top: 5%;
+
+}
+.col-md-6{
+	padding-top: 4em;
+	padding-bottom: 2em;
+}
+#borrow{
+
+	border-right: 1px solid white;
+}
+.box{
+	border: 1px solid white;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+.col-md-4{
+	margin: 0 auto;
+	float: none;
+
+}
+
+.btn:hover{
+	color: #F1F5F2;
+}

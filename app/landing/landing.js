@@ -26,6 +26,12 @@ function($location, $scope) {
 		}, 1000);
 	});
 
+	$scope.loggingIn = 0;
+
+	$scope.loginShow = function(){
+		$scope.loggingIn = !$scope.loggingIn;
+	};
+
 	$scope.start = function(){
 		$location.url('/app');
 	};
