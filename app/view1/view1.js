@@ -150,17 +150,6 @@ function ($scope, Upload, $timeout, $http, focus, $window) {
 
     $scope.submitForm = function(){
         console.log("sent");
-
-        // $.ajax({
-        //   url:'http://formforme.cloudapp.net:5000/'+$scope.formName,
-        //   type:"POST",
-        //   data:$scope.formData,
-        //   contentType:"application/json; charset=utf-8",
-        //   dataType:"json",
-        //   success: function(data){
-        //     console.log( "Data Loaded: " + data );
-        //   }
-        // })
         
         $.post( 'http://formforme.cloudapp.net:5000/'+$scope.formName, $scope.formData)
           .done(function( data ) {
@@ -168,37 +157,6 @@ function ($scope, Upload, $timeout, $http, focus, $window) {
                 $window.open('http://formforme.cloudapp.net:5000/pdfs/output.pdf');
             }, 1000);
           });
-
-          
-
-        // $http({
-        //     url: 'http://formforme.cloudapp.net:5000/'+$scope.formName,
-        //     method: 'POST',
-        //     dataType: 'json',
-        //     data: $scope.formData,
-        //     headers: {
-        //         "Content-Type": "x-www-form-urlencoded"
-        //     }
-
-        // }).success(function(response){
-        //     console.log($scope.formData);
-        //     console.log('success', response);
-        // }).error(function(error){
-        //     console.log('error');
-        // });
-
-        // $http.post('http://formforme.cloudapp.net:5000/'+$scope.formName, JSON.stringify({message: "Rishabh"})).
-        //   then(function(response) {
-        //     console.log("yes", response);
-        //     // this callback will be called asynchronously
-        //     // when the response is available
-        //   }, function(response) {
-        //     console.log("no");
-        //     // called asynchronously if an error occurs
-        //     // or server returns response with an error status.
-        //   });
-
-
     };
 
     focus('startInput');
