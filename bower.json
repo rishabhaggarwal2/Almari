@@ -16,6 +16,7 @@
     "parse-angular-patch": "~0.1.2",
     "parse": "~1.6.5",
     "lodash": "~3.10.1",
-    "node-uuid": "~1.4.3"
+    "node-uuid": "~1.4.3",
+    "angular-resource": "~1.4.7"
   }
 }

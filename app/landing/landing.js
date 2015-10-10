@@ -9,8 +9,8 @@ angular.module('myApp.landing', ['ngRoute'])
   });
 }])
 
-.controller('landingCtrl', ['$location', '$scope',
-function($location, $scope) {
+.controller('landingCtrl', ['$location', '$scope', 'ParseService',
+function($location, $scope, ParseService) {
 	$(document).ready(function(){
 		var text = "formsfor.me";
 		var index = 0;
@@ -32,11 +32,18 @@ function($location, $scope) {
 		$scope.loggingIn = !$scope.loggingIn;
 	};
 
-
 	$scope.lend = function(){
 		$location.url('/post');
 	};
 	$scope.borrow = function(){
 		$location.url('/borrow');
+	};
+
+	$scope.login = function() {
+		ParseService.login($scope.signupUsername, $scope.signupPassword, function(err) {
+			if (err) {
+				alert("Bad email-password pair");
+			}
+		});
 	};
 }]);

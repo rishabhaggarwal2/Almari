@@ -1,8 +1,9 @@
 <div class="container-fluid landing">
   <button type="button" class="btn btn-primary" id="login" ng-click="loginShow()">Login</button>
     <div class="form-group" ng-show="loggingIn">
-      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+      <input type="email" ng-model="signupUsername"class="form-control" id="inputEmail" placeholder="Email">
+      <input type="password" ng-mode="signupPassword" class="form-control" id="inputPassword" placeholder="Password">
+      <button type="button" class="btn btn-primary" id="login" ng-click="login()">Login</button>
     </div>
     <div id="almari">
       <center>
