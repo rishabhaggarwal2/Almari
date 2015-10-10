@@ -1,8 +1,45 @@
 <div class="container-fluid">
 	<div class="container" id="postDress">
 		<div class="row">
-			<div class="col-xs-12 col-md-4" class="" ="postPhoto">
-				
+			<div class="col-xs-12 col-md-4 postPhoto">
+				<img src="{{product.imageURL}}" />
+			</div>
+			<div class="col-xs-12 col-md-8">
+				<div class="input productNameHolder">
+					<input type="text" placeholder="Enter Product Name" class="productName" ng-model="product.name">
+				</div>
+				<div class="input productDetailsHolder">
+					Brand: <input type="text" placeholder="eg. Banana Republic" class="productName" ng-model="product.brand">
+					ProductID: <input type="text" placeholder="eg. 20461526" class="productName" ng-model="product.UID">
+				</div>
+				<div class="input productDetailsHolder ">
+					Size: 
+					<div class="switch">
+						<button ng-repeat="size in sizes" ng-click="selectSize(size)" ng-class="{'active': size == product.size}">{{size}}</button>
+					</div>
+
+					Gender: 
+					<div class="switch">
+						<button ng-repeat="gender in genders" ng-click="selectGender(gender)"  ng-class="{'active': gender == product.gender}">{{gender}}</button>
+					</div>
+				</div>
+
+				<div class="input productDetailsHolder Category">
+					Category: 
+					<div class="switch">
+						<button ng-repeat="category in categories" ng-click="selectCategory(category)" ng-class="{'active': category == product.category}">{{category}}</button>
+					</div>
+				</div>
+
+
+				<div class="input productDetailsHolder">
+					<p>Enter a brief description about your product</p>
+					<textarea ng-model="product.desc">
+					</textarea>
+				</div>
+				<div class="input">
+					<button class="btn btnPrimary">Submit</button>
+				</div>
 			</div>
 		</div>
 	</div>

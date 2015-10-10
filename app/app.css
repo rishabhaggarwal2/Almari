@@ -1,16 +1,13 @@
 body {
-  font-family: 'Lora', sans-serif;
-  font-weight: 400;
+  font-family: 'Lato';
+  font-weight: 300;
   margin: 0 auto;
-  padding: 0; }
-
-.landing body {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.5;
   padding: 0;
-  overflow-y: scroll;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  width: 100%; }
+
 .landing #almari {
   margin-top: 15%;
   margin-bottom: 10%; }
@@ -61,5 +58,103 @@ body {
   color: #F1F5F2; }
 .landing .icon {
   margin-bottom: 1.5em; }
+
+.btnPrimary {
+  border-radius: 0;
+  background-color: #f25f5c;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+
+#postDress {
+  margin-top: 80px;
+  color: #333;
+  overflow-x: hidden; }
+  #postDress .postPhoto img {
+    width: 100%;
+    min-height: 400px;
+    background: #ccc; }
+    @media (max-width: 768px) {
+      #postDress .postPhoto img {
+        min-height: auto;
+        margin-bottom: 20px; } }
+  #postDress input {
+    border: none;
+    outline: none !important; }
+  #postDress input:focus {
+    border: none;
+    outline: none !important; }
+  #postDress .productNameHolder input {
+    font-size: 1.5em; }
+  #postDress .input {
+    margin-bottom: 20px; }
+    #postDress .input input {
+      padding: 5px 0px;
+      border-bottom: 1px solid #fff; }
+      @media (max-width: 768px) {
+        #postDress .input input {
+          padding: 0px; } }
+    #postDress .input input:focus {
+      border-bottom: 1px solid #999; }
+  #postDress .productDetailsHolder {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1em;
+    color: #777 !important; }
+    #postDress .productDetailsHolder input {
+      padding: 5px;
+      border-bottom: 1px solid #fff; }
+      @media (max-width: 768px) {
+        #postDress .productDetailsHolder input {
+          padding: 5px 0px;
+          margin-bottom: 10px; } }
+    #postDress .productDetailsHolder input:focus {
+      border-bottom: 1px solid #999; }
+    #postDress .productDetailsHolder input, #postDress .productDetailsHolder .switch {
+      display: inline-block;
+      margin-right: 40px; }
+    #postDress .productDetailsHolder .switch {
+      background: none;
+      margin-left: 5px;
+      border: transparent; }
+      @media (max-width: 768px) {
+        #postDress .productDetailsHolder .switch {
+          width: 120%;
+          margin-left: 0;
+          margin-bottom: 10px; } }
+      #postDress .productDetailsHolder .switch button {
+        background: none;
+        outline: none;
+        border: none;
+        border-right: 1px solid #777;
+        width: 39px; }
+      #postDress .productDetailsHolder .switch button:hover, #postDress .productDetailsHolder .switch button.active {
+        background: #eee; }
+      #postDress .productDetailsHolder .switch button.active {
+        background: #ddd; }
+      #postDress .productDetailsHolder .switch button:last-child {
+        border: none; }
+    #postDress .productDetailsHolder p {
+      margin: 0;
+      text-transform: none; }
+    #postDress .productDetailsHolder textarea {
+      width: 80%;
+      font-size: 14px;
+      padding: 20px;
+      background-color: #eee;
+      border: 0;
+      font-weight: 400;
+      color: #777;
+      height: 183px; }
+  #postDress .Category .switch button {
+    width: auto;
+    padding: 5px 10px; }
+    @media (max-width: 768px) {
+      #postDress .Category .switch button {
+        display: block;
+        padding: 5px 0;
+        border: none;
+        border-bottom: 1px solid #777;
+        width: 200px; } }
 
 /*# sourceMappingURL=app.css.map */

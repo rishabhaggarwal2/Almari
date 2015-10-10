@@ -1,20 +1,16 @@
 $red: #f25f5c;
 body {
-  font-family: 'Lora', sans-serif;
-  font-weight: 400;
+  font-family: 'Lato';
+  font-weight: 300;
   margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.5;
   padding: 0;
+  overflow-x:hidden;
+  width:100%; 
 }
 
 .landing{
-  body {
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    margin: 0 auto;
-    padding: 0;
-    overflow-y: scroll;
-  overflow-x: hidden;
-  }
 
   #almari{
     
@@ -92,5 +88,137 @@ body {
 
   .icon{
     margin-bottom: 1.5em;
+  }
+}
+
+.btnPrimary{
+  border-radius: 0;
+  background-color: $red;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#postDress{
+  margin-top: 80px;
+  color:#333;
+  overflow-x:hidden;
+  .postPhoto{
+    img{
+      width:100%;
+      min-height: 400px;
+      background:#ccc;    
+
+      @media (max-width: 768px) {
+        min-height: auto;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  input{
+    border:none;
+    outline: none !important;
+  }
+  input:focus{
+    border:none;
+    outline: none !important;
+  }
+  
+  .productNameHolder input{
+    font-size: 1.5em;
+  }
+  .input{
+    margin-bottom: 20px;
+    input{
+      padding:5px 0px;
+      border-bottom: 1px solid #fff;
+      @media (max-width: 768px) {
+        padding:0px;
+      }
+    }
+    input:focus{
+      border-bottom: 1px solid #999;
+    }
+
+  }
+  .productDetailsHolder{
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1em;
+    color:#777 !important;
+
+
+    input{
+      padding:5px;
+      @media (max-width: 768px) {
+        padding:5px 0px;
+        margin-bottom: 10px;
+      }
+      border-bottom: 1px solid #fff;
+    }
+    input:focus{
+      border-bottom: 1px solid #999;
+    }
+    input, .switch{
+      display: inline-block;
+      margin-right: 40px;
+    }
+
+    .switch{
+      background:none;
+      margin-left: 5px;
+      border:transparent;
+      @media (max-width: 768px) {
+        width:120%;
+        margin-left: 0;
+        margin-bottom: 10px;
+      }
+      button{
+        background: none;
+        outline: none;
+        border: none;
+        border-right: 1px solid #777;
+        width: 39px;
+      }
+      button:hover, button.active{
+        background:#eee;
+      }
+      button.active{
+        background:#ddd;
+      }
+      button:last-child{
+        border:none;
+      }
+    }
+
+    p{
+      margin:0;
+      text-transform: none;
+    }
+    textarea{
+      width: 80%;
+          font-size: 14px;
+          padding: 20px;
+          background-color: #eee;
+          border: 0;
+          font-weight: 400;
+          color: #777;
+          height: 183px;
+    }
+  }
+  .Category{
+    .switch{
+      button{
+        width:auto;
+        padding:5px 10px;
+        @media (max-width: 768px) {
+          display:block;
+          padding:5px 0;
+          border:none;
+          border-bottom: 1px solid #777;
+          width:200px;
+        }
+      }
+    }
   }
 }
