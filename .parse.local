@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "Almari": {
+      "applicationId": "ixCXGcpZanUyXQKNMWDCSTLdEhhSeVymvE6HEH6F"
+    },
+    "_default": {
+      "link": "Almari"
+    }
+  }
+}
