@@ -35,4 +35,8 @@ function($location, $scope) {
 	$scope.start = function(){
 		$location.url('/app');
 	};
+
+	$scope.login = function() {
+		ParseService.login($scope.signupUsername, $scope.signupPassword);
+	});
 }]);
