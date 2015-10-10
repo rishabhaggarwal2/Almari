@@ -25,6 +25,37 @@ body {
   float: left;
   margin-left: 2%;
   margin-right: 2%; }
+.landing .form-control-fancy {
+  margin-top: 10px;
+  width: 25%;
+  float: left;
+  margin-left: 2%;
+  margin-right: 2%;
+  display: block;
+  height: 34px;
+  border-radius: 0;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  transition: all 0.4s; }
+.landing .form-control-fancy:focus {
+  outline: none;
+  border-bottom: 3px solid #f25f5c; }
+.landing .form-control-fancy::-webkit-input-placeholder {
+  transition: all 0.4s;
+  transform: translate(0px, 0px); }
+.landing .form-control-fancy:focus::-webkit-input-placeholder {
+  transform: translate(0px, 34px); }
+.landing .login-container {
+  display: block; }
+.landing .login-buttons {
+  position: absolute;
+  left: 72px;
+  top: 42px;
+  width: 90%; }
+.landing .login-buttons .btn {
+  margin: 0px 6px; }
+.landing #inputConfirmPassword {
+  display: none; }
 .landing #alm {
   font-size: 6em;
   font-family: 'Mr De Haviland', cursive;

@@ -30,6 +30,11 @@ function($location, $scope, ParseService) {
 
 	$scope.loginShow = function(){
 		$scope.loggingIn = !$scope.loggingIn;
+		if ($scope.loggingIn) {
+			$('.toggle-login').text('<');
+		} else {
+			$('.toggle-login').text('Login');
+		}
 	};
 
 	$scope.lend = function(){
