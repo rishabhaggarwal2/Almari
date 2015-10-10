@@ -19,10 +19,10 @@ body {
   }
 
   #login{
-  margin-top: 10px;
-  background-color: #f25f5c;
-  border: #f25f5c;
-  float:left;
+    margin-top: 10px;
+    background-color: #f25f5c;
+    border: #f25f5c;
+    float:left;
   }
 
   .form-control{
@@ -31,7 +31,54 @@ body {
     float: left;
     margin-left: 2%;
     margin-right: 2%;
+  }
 
+  .form-control-fancy {
+    margin-top: 10px;
+    width: 25%;
+    float: left;
+    margin-left: 2%;
+    margin-right: 2%;
+    display: block;
+    height: 34px;
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    transition: all 0.4s
+  }
+
+  .form-control-fancy:focus {
+    outline: none;
+    border-bottom: 3px solid #f25f5c;
+  }
+  .form-control-fancy::-webkit-input-placeholder {
+    transition: all 0.4s;
+    transform: translate(0px, 0px);
+  }
+  .form-control-fancy:focus::-webkit-input-placeholder {
+    transform: translate(0px, 34px);
+  }
+  .login-container {
+    display: block;
+  }
+  .login-buttons {
+    position: absolute;
+    left: 72px;
+    top: 42px;
+    width: 90%
+  }
+  .login-buttons .btn {
+    margin: 0px 6px;
+  }
+  #inputConfirmPassword {
+    display: none;
+  }
+  .form-error {
+    color: #f25f5c;
+    font-weight: 500;
+    position: relative;
+    top: 16px;
+    left: 8px;
   }
 
   #alm{
