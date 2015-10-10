@@ -1,11 +1,30 @@
 {
-  "instructions": "text",
-  "inputs": [
-    {
-      "type": "checkbox|text|textarea|radio|date|address|signature|currency",
-      "name": "text",
-      "value": "text | boolean | number",
-      "coordinates": ["float", "float"]
-    }
-  ]
+  "user": {
+    username
+    password
+    email
+    products_owned
+    products_lent
+    latitude
+    longitude
+  },
+  "products": {
+    id
+    price
+    deposit
+    retail
+    link
+    usage
+    category
+    verified
+  },
+  "post": {
+    id
+    user
+  },
+  "comments": {
+    emoji
+    post
+    user
+  }
 }
