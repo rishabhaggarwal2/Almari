@@ -1,0 +1,96 @@
+$red: #f25f5c;
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.landing{
+  body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    margin: 0 auto;
+    padding: 0;
+    overflow-y: scroll;
+  overflow-x: hidden;
+  }
+
+  #almari{
+    
+    margin-top: 15%;
+    margin-bottom: 10%;
+  }
+
+  #login{
+  margin-top: 10px;
+  background-color: #f25f5c;
+  border: #f25f5c;
+  float:left;
+  }
+
+  .form-control{
+    margin-top: 10px;
+    width: 30%;
+    float: left;
+    margin-left: 2%;
+    margin-right: 2%;
+
+  }
+
+  #alm{
+    font-size: 6em;
+    font-family: 'Mr De Haviland', cursive;
+    color: #f25f5c;
+  }
+
+  #sub{
+    font-size: 1em;
+    font-family: 'Lato', sans-serif;
+    margin-top: -20px;
+    font-weight: 700;
+    color: #50514F;
+  }
+
+  .sec1{
+    margin-right: -10%;
+    margin-left: -10%; 
+    padding-top: 1%;
+    background-color: #f25f5c;
+    color: white;
+  }
+
+  #toprow{
+    margin-top: 5%;
+
+  }
+  .col-md-6{
+    padding-top: 3em;
+    padding-bottom: 2em;
+  }
+  #borrow{
+
+    border-right: 1px solid white;
+  }
+  .box{
+    border: 1px solid white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .col-md-4{
+    margin: 0 auto;
+    float: none;
+
+  }
+
+  .btn:hover{
+    color: #F1F5F2;
+  }
+
+  .icon{
+    margin-bottom: 1.5em;
+  }
+}
