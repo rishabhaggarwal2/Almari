@@ -3,13 +3,16 @@
     username
     password
     email
-    products_owned
-    products_lent
+    productsOwned
+    productsLent
     latitude
     longitude
   },
   "products": {
     id
+    owner
+    lendee
+    inUse
     price
     deposit
     retail
@@ -17,6 +20,7 @@
     usage
     category
     verified
+    imageUrl
   },
   "post": {
     id
