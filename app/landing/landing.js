@@ -32,8 +32,12 @@ function($location, $scope) {
 		$scope.loggingIn = !$scope.loggingIn;
 	};
 
-	$scope.start = function(){
-		$location.url('/app');
+
+	$scope.lend = function(){
+		$location.url('/post');
+	};
+	$scope.borrow = function(){
+		$location.url('/borrow');
 	};
 
 	$scope.login = function() {
