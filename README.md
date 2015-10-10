@@ -34,3 +34,16 @@ npm start
 ```
 
 Now browse to the app at `http://localhost:8000/app/index.html`.
+
+## How to edit css
+
+Install sass using 
+```
+sudo gem install sass
+```
+Then cd into the app directory in a new terminal window and run the following command and keep the terminal window open in the background.
+```
+sass --watch app.scss:app.css
+```
+Make changes to app.scss
+
