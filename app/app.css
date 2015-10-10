@@ -56,6 +56,12 @@ body {
   margin: 0px 6px; }
 .landing #inputConfirmPassword {
   display: none; }
+.landing .form-error {
+  color: #f25f5c;
+  font-weight: 500;
+  position: relative;
+  top: 16px;
+  left: 8px; }
 .landing #alm {
   font-size: 6em;
   font-family: 'Mr De Haviland', cursive;

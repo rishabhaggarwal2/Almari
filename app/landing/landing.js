@@ -27,13 +27,31 @@ function($location, $scope, ParseService) {
 	});
 
 	$scope.loggingIn = 0;
+	$scope.signupFlag = 0;
 
-	$scope.loginShow = function(){
+	$scope.loginShow = function() {
 		$scope.loggingIn = !$scope.loggingIn;
 		if ($scope.loggingIn) {
 			$('.toggle-login').text('<');
 		} else {
 			$('.toggle-login').text('Login');
+		}
+	};
+
+	$scope.signupMode = function() {
+		if ($scope.signupFlag === 0) {
+			$('#inputConfirmPassword').show();
+			$scope.signupFlag = 1;
+		} else if ($scope.signupFlag === 1) {
+			if ($scope.signupPassword !== $scope.signupConfirm) {
+				$('.form-error').text('Passwords do not match').show();
+				return;
+			}
+			ParseService.signUp($scope.signupUsername, $scope.signupPassword, function(err) {
+				if (err) {
+					$('.form-error').text(err.message).show();
+				}
+			});
 		}
 	};
 
@@ -47,7 +65,9 @@ function($location, $scope, ParseService) {
 	$scope.login = function() {
 		ParseService.login($scope.signupUsername, $scope.signupPassword, function(err) {
 			if (err) {
-				alert("Bad email-password pair");
+				$('.form-error').text(err.message).show();
+			} else {
+				alert("SUCCESSFUL LOGIN");
 			}
 		});
 	};

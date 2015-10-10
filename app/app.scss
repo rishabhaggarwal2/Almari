@@ -77,6 +77,13 @@ body {
   #inputConfirmPassword {
     display: none;
   }
+  .form-error {
+    color: #f25f5c;
+    font-weight: 500;
+    position: relative;
+    top: 16px;
+    left: 8px;
+  }
 
   #alm{
     font-size: 6em;

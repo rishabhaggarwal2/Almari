@@ -3,12 +3,13 @@
     <div class="form-group login-container" ng-show="loggingIn">
       <div class="login-inputs">
         <input type="email" ng-model="signupUsername"class="form-control-fancy" id="inputEmail" placeholder="Email">
-        <input type="password" ng-mode="signupPassword" class="form-control-fancy" id="inputPassword" placeholder="Password">
-        <input type="password" ng-mode="signupPassword" class="form-control-fancy" id="inputConfirmPassword" placeholder="Confirm password">
+        <input type="password" ng-model="signupPassword" class="form-control-fancy" id="inputPassword" placeholder="Password">
+        <input type="password" ng-model="signupConfirm" class="form-control-fancy" id="inputConfirmPassword" placeholder="Confirm password">
       </div>
       <div class="login-buttons">
         <button type="button" class="btn btn-primary" id="login" ng-click="login()">Login</button>
-        <button type="button" class="btn btn-primary btn-signup" id="login">Sign up</button>
+        <button type="button" class="btn btn-primary btn-signup" id="login" ng-click="signupMode()">Sign up</button>
+        <span class="form-error"></span>
       </div>
     </div>
     <div id="almari">
