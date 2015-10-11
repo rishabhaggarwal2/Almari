@@ -22,4 +22,5 @@ npm-debug.log
 /scripts/bower/bower-*
 .sass-cache/
 *.css.map
+env.js
 

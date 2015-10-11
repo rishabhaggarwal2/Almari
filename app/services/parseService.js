@@ -67,6 +67,33 @@ angular.module('parseService', ['ngResource'])
           done(error);
         }
       });
+    },
+
+    findProductsByCategory: function findProductsByCategory(category, done) {
+      var query = new Parse.Query(Product);
+      query.equalTo('category', category);
+      query.find({
+        success: function(results) {
+          done(null, results);
+        },
+        error: done
+      });
+    },
+
+    findMyProducts: function findMyProducts(done) {
+      // FIXME: remove once invariant in place
+      if (!loggedInUser) {
+        return done(new Error('Must be logged in to do this'));
+      }
+
+      var query = new Parse.Query(Product);
+      query.equalTo('owner', loggedInUser.get('username'));
+      query.find({
+        success: function(results) {
+          done(null, results);
+        },
+        error: done
+      });
     }
   };
 
