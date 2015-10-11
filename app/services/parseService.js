@@ -46,7 +46,7 @@ angular.module('parseService', ['ngResource'])
       }
 
       var product = new Product();
-      ['gender', 'size', 'productId', 'category', 'imageUrl', 'description', 'name'].forEach(function(key) {
+      ['gender', 'size', 'productId', 'category', 'imageUrl', 'description', 'name','company','price'].forEach(function(key) {
         if (fields[key]) {
           product.set(key, fields[key]);
         }

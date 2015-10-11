@@ -14,7 +14,8 @@ angular.module('myApp.view2', ['ngRoute'])
 	$scope.genders = ["M","F"];
 	$scope.product = {};
 	$scope.categories = ["Party","Wedding","Prom", "Formal", "Cultural", 'Accessories'];
-	$scope.product.imageURL = "http://www.gap.com/webcontent/0009/935/338/cn9935338.jpg";
+	
+
 	$scope.selectSize = function(size){
 		$scope.product.size = size;
 	};
@@ -23,6 +24,14 @@ angular.module('myApp.view2', ['ngRoute'])
 	};
 	$scope.selectCategory = function(category){
 		$scope.product.category = category;
+	};
+	$scope.updateImage = function(){
+		var url = {
+			"Gap":"http://www.gap.com",
+			"Banana":"http://www.bananarepublic.gap.com",
+			"Banana Republic":"http://www.bananarepublic.gap.com"
+		};
+		$scope.product.imageUrl = url[$scope.product.company]+"/resources/productImage/v1/"+$scope.product.productId+"/P01";
 	};
 
   $scope.submitProduct = function() {

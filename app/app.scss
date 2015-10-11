@@ -250,7 +250,7 @@ body {
           border: 0;
           font-weight: 400;
           color: #777;
-          height: 183px;
+          height: 114px;
     }
   }
   .Category{
@@ -275,3 +275,42 @@ body {
     position: relative
   }
 }
+
+#borrow{
+  margin-top: 80px;
+  .question{
+    h2{
+      font-size: 1.5em;
+      font-weight: 300;
+      color:#333;
+    }
+  }
+  .swatches{
+    margin-top: 20px;
+    .swatch{
+      cursor: pointer;
+
+      img{
+        width:100%;
+        cursor: pointer;
+
+      }
+    }
+  }
+}
+
+#borrowDresses{
+  margin-top: 80px;
+  background:#f3f3f3;
+
+  .dresses{
+    .dress{
+      margin-top: 40px;
+    }
+    p{
+      text-align:center;
+    }
+  }
+}
+
+

@@ -182,7 +182,7 @@ body {
       border: 0;
       font-weight: 400;
       color: #777;
-      height: 183px; }
+      height: 114px; }
   #postDress .Category .switch button {
     width: auto;
     padding: 5px 10px; }
@@ -198,5 +198,27 @@ body {
     display: none;
     height: 30px;
     position: relative; }
+
+#borrow {
+  margin-top: 80px; }
+  #borrow .question h2 {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #333; }
+  #borrow .swatches {
+    margin-top: 20px; }
+    #borrow .swatches .swatch {
+      cursor: pointer; }
+      #borrow .swatches .swatch img {
+        width: 100%;
+        cursor: pointer; }
+
+#borrowDresses {
+  margin-top: 80px;
+  background: #f3f3f3; }
+  #borrowDresses .dresses .dress {
+    margin-top: 40px; }
+  #borrowDresses .dresses p {
+    text-align: center; }
 
 /*# sourceMappingURL=app.css.map */
