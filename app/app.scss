@@ -103,7 +103,8 @@ body {
   .nav-username .fa-home {
     position: absolute;
     width: 100%;
-    transform: translate(20%, -150%);
+    left: 40%;
+    transform: translateY(-150%);
     transition: all 0.4s;
   }
   .nav-username-text {
@@ -113,7 +114,7 @@ body {
     transition: all 0.4s;
   }
   .nav-username:hover .fa-home {
-    transform: translate(20%, -4px);
+    transform: translateY(-4px);
   }
   .nav-username:hover .nav-username-text{
     transform: translateY(150%);
