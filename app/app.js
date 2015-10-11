@@ -9,6 +9,8 @@ angular.module('myApp', [
   'myApp.landing',
   'myApp.product',
   'myApp.version',
+  // uncomment to load local env vars and use 'config' global constant
+  // 'myApp.env',
   'ngFileUpload',
   'ui.bootstrap',
   'parseService'

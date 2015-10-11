@@ -9,7 +9,7 @@ angular.module('myApp.view2', ['ngRoute'])
   });
 }])
 
-.controller('View2Ctrl', ['$scope', function($scope) {
+.controller('View2Ctrl', ['$scope', 'ParseService', '$location', function($scope, ParseService, $location) {
 	$scope.sizes= ["XS", "S", "M", "L", "XL","OS"];
 	$scope.genders = ["M","F"];
 	$scope.product = {};
@@ -24,4 +24,16 @@ angular.module('myApp.view2', ['ngRoute'])
 	$scope.selectCategory = function(category){
 		$scope.product.category = category;
 	};
+
+  $scope.submitProduct = function() {
+    ParseService.addProduct($scope.product, function(err, product) {
+      if (err) {
+        $('.submit-product-error').text(err.message).slideDown();
+      } else {
+        alert('Sucessful submit');
+        $location.url('/');
+        $scope.$apply();
+      }
+    })
+  };
 }]);

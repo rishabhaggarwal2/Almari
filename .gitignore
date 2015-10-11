@@ -20,3 +20,7 @@ libpeerconnection.log
 npm-debug.log
 /tmp/
 /scripts/bower/bower-*
+.sass-cache/
+*.css.map
+env.js
+

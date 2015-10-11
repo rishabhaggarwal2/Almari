@@ -22,6 +22,15 @@
     verified
     imageUrl
   },
+  "current product parse schema": {
+    objectId
+    category
+    gender
+    name
+    owner
+    pid
+    size
+  }
   "post": {
     id
     user
