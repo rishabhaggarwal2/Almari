@@ -4,32 +4,28 @@
     password
     email
     productsOwned
-    productsLent
+    productsBorrowed
+    productsPinned
     latitude
     longitude
   },
-  "products": {
-    id
+  "current product parse schema": {
+    objectId
+    name
+    category
+    gender
     owner
+    pid
+    size
+
     lendee
     inUse
     price
     deposit
     retail
     link
-    usage
-    category
-    verified
     imageUrl
-  },
-  "current product parse schema": {
-    objectId
-    category
-    gender
-    name
-    owner
-    pid
-    size
+    verified
   }
   "post": {
     id

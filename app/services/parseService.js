@@ -1,10 +1,28 @@
 'use strict';
 
-angular.module('parseService', ['ngResource'])
-.factory('ParseService', function($resource) {
+/* Parse data access layer
+ * All methods use node-style callback:
+ *   On success: callback(null, result obj)
+ *   On error:   callback(Error/Parse-Error obj) - .message for string
+ *
+ * Users:
+ *   login
+ *   signUp
+ *   logout
+ *   pinProduct
+ *   borrowProduct
+ * 
+ * Products:
+ *   addProduct - Create
+ *   findProducts - Read, cached
+ */
+angular.module('parseService', [])
+.factory('ParseService', function() {
   Parse.initialize('ixCXGcpZanUyXQKNMWDCSTLdEhhSeVymvE6HEH6F', 'ewTYaHPjOa73YjmHjHoBks0UO5IaPw4jKMlucghA');
 
+  // cache stuff
   var loggedInUser;
+  var productsCache;
 
   var Product = Parse.Object.extend('Product');
 
@@ -23,7 +41,7 @@ angular.module('parseService', ['ngResource'])
       });
     },
 
-    signUp : function signUp(username, password, done) {
+    signUp: function signUp(username, password, done) {
       Parse.User.signUp(username, password, { ACL: new Parse.ACL() }, {
         success: function(user) {
           loggedInUser = user;
@@ -39,8 +57,47 @@ angular.module('parseService', ['ngResource'])
       Parse.User.logout();
     },
 
+    pinProduct: function pinProduct(pid, done) {
+      Parse.User.current().addUnique('productsPinned', pid);
+      Parse.User.current().save(null, {
+        success: function(product) {
+          done(null, product);
+        },
+        error: function(product, err) {
+          done(err);
+        }
+      });
+    },
+
+    /* Set product's in-use to true and add lendee. Add pid to user's products */
+    borrowProduct: function borrowProduct(pid, done) {
+      if (!loggedInUser) {
+        return done(new Error('Must be logged in to do this'));
+      }
+
+      var query = new Parse.Query('Product');
+      query.equalTo('pid', pid);
+      query.first()
+      .then(function(product) {
+        if (product.inUse) {
+          throw new Error('Product has already been borrowed');
+        }
+        product.set('inUse', true);
+        product.set('lendee', loggedInUser.get('username'));
+        return product.save();
+      })
+      .then(function() {
+        Parse.User.current().addUnique('productsBorrowed');
+        return Parse.User.current().save();
+      })
+      .then(function() {
+        done();
+      }, function(err) {
+        done(err);
+      });
+    },
+
     addProduct: function addProduct(fields, done) {
-      // FIXME: remove once invariant in place
       if (!loggedInUser) {
         return done(new Error('Must be logged in to do this'));
       }
@@ -53,6 +110,7 @@ angular.module('parseService', ['ngResource'])
       });
       product.set('owner', loggedInUser.get('username'));
       product.set('pid', uuid.v1());
+      product.set('inUse', false);
 
       var productACL = new Parse.ACL();
       productACL.setPublicReadAccess(true);
@@ -69,33 +127,52 @@ angular.module('parseService', ['ngResource'])
       });
     },
 
-    findProductsByCategory: function findProductsByCategory(category, done) {
+    /* filters: {field: value} equalities added to query
+     * eg. I only want 'Wedding' dresses of size 'S':
+     * 
+     *   findProducts({category: 'Wedding', size 'S'}, callback);
+     */
+    findProducts: function findProductsByCategory(filters, done) {
       var query = new Parse.Query(Product);
-      query.equalTo('category', category);
+      _.forOwn(filters, function(val, key) {
+        query.equalTo(key, val);
+      });
+
       query.find({
         success: function(results) {
+          productsCache = results;
           done(null, results);
         },
         error: done
       });
     },
 
-    findMyProducts: function findMyProducts(done) {
-      // FIXME: remove once invariant in place
-      if (!loggedInUser) {
-        return done(new Error('Must be logged in to do this'));
+    findProduct: function findProduct(pid, done) {
+      if (productsCache && productsCache.length > 0) {
+        var match = _.filter(productsCache, function(obj) {
+          return obj.pid === pid;
+        });
+        if (match.length > 0) {
+          done(null, match[0]);
+        } else {
+          return _findProductByPid(pid, done);
+        }
+      } else {
+        return _findProductByPid(pid, done);
       }
-
-      var query = new Parse.Query(Product);
-      query.equalTo('owner', loggedInUser.get('username'));
-      query.find({
-        success: function(results) {
-          done(null, results);
-        },
-        error: done
-      });
     }
   };
+
+  function _findProductByPid(pid, done) {
+    var query = new Parse.Query(Product);
+    query.equalTo('pid', pid);
+    query.first({
+      success: function(product) {
+        done(null, product);
+      },
+      error: done
+    });
+  }
 
   return ParseService;
 
