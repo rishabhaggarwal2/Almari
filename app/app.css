@@ -15,7 +15,8 @@ body {
   width: 100%; }
 
 .persistent-nav {
-  min-height: 70px; }
+  min-height: 70px;
+  z-index: -4; }
 
 .persistent-nav #login {
   display: inline-block;
@@ -68,21 +69,46 @@ body {
   top: 16px;
   left: 8px; }
 .persistent-nav .nav-username {
-  display: inline;
+  z-index: 5;
+  overflow: hidden;
+  display: inline-block;
   color: #f25f5c;
   border: 1px solid #f25f5c;
   border-radius: 10%;
   padding: 8px;
   position: relative;
   left: 10px;
-  top: 18px;
-  cursor: pointer; }
+  top: 10px;
+  cursor: pointer;
+  background: white; }
+.persistent-nav .nav-username .fa-home {
+  position: absolute;
+  width: 100%;
+  transform: translate(20%, -150%);
+  transition: all 0.4s; }
+.persistent-nav .nav-username-text {
+  z-index: -99;
+  display: inline-block;
+  transform: translateY(0px);
+  transition: all 0.4s; }
+.persistent-nav .nav-username:hover .fa-home {
+  transform: translate(20%, -4px); }
+.persistent-nav .nav-username:hover .nav-username-text {
+  transform: translateY(150%); }
 .persistent-nav .logout-btn {
-  display: none;
+  z-index: 3;
+  opacity: 0;
   color: #f25f5c;
   position: relative;
   left: 20px;
-  top: 24px; }
+  top: 10px;
+  transform: translateY(-30px);
+  transition: all 0.4s;
+  cursor: pointer; }
+.persistent-nav .logout-btn.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0px); }
 
 .landing #almari {
   margin-top: 15%;
@@ -109,11 +135,12 @@ body {
   padding-top: 3em;
   padding-bottom: 2em; }
 .landing #borrow {
+  margin-top: 0;
+  padding-bottom: 2em;
   border-right: 1px solid white; }
 .landing .box {
   border: 1px solid white;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 15px;
   font-size: 1.5em;
   text-align: center; }
 .landing .col-md-4 {
@@ -248,14 +275,16 @@ body {
   #borrow .swatches {
     margin-top: 20px; }
     #borrow .swatches .swatch {
-      cursor: pointer; }
+      cursor: pointer;
+      margin-bottom: 20px; }
       #borrow .swatches .swatch img {
         width: 100%;
         cursor: pointer; }
 
 #borrowDresses {
   background: #f3f3f3;
-  padding-bottom: 40px; }
+  padding-bottom: 40px;
+  min-height: 600px; }
   #borrowDresses .dresses .dress {
     margin-top: 40px; }
     #borrowDresses .dresses .dress img {
@@ -290,9 +319,14 @@ body {
     opacity: 1; }
 
 #pic {
-  margin-left: 7%;
+  margin-left: 20%;
   float: left;
   margin-right: 5%; }
+  @media (max-width: 768px) {
+    #pic {
+      margin: auto;
+      display: block;
+      float: none; } }
 
 #prodname {
   color: #f25f5c;
@@ -302,9 +336,28 @@ body {
 .prodB {
   margin-left: 10%; }
 
+@media (max-width: 768px) {
+  .productB {
+    margin-left: 10%; } }
+
+@media (max-width: 768px) {
+  .MiPrice {
+    margin-left: 10%; } }
+
+@media (max-width: 768px) {
+  .miButtons {
+    margin-left: 10%;
+    text-align: center; }
+    .miButtons button {
+      display: block;
+      margin-top: 10px; } }
+
 #description {
   margin-right: 10%;
   text-align: justify; }
+  @media (max-width: 768px) {
+    #description {
+      margin-left: 10%; } }
 
 .submit-product-error {
   color: #f25f5c;

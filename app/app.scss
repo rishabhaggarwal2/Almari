@@ -18,6 +18,7 @@ body {
 
 .persistent-nav {
   min-height: 70px;
+  z-index: -4;
 }
 
 .persistent-nav {
@@ -86,22 +87,52 @@ body {
     left: 8px;
   }
   .nav-username {
-    display: inline;
+    z-index: 5;
+    overflow: hidden;
+    display: inline-block;
     color: $red;
     border: 1px solid $red;
     border-radius: 10%;
     padding: 8px;
     position: relative;
     left: 10px;
-    top: 18px;
+    top: 10px;
     cursor: pointer;
+    background: white;
+  }
+  .nav-username .fa-home {
+    position: absolute;
+    width: 100%;
+    transform: translate(20%, -150%);
+    transition: all 0.4s;
+  }
+  .nav-username-text {
+    z-index: -99;
+    display: inline-block;
+    transform: translateY(0px);
+    transition: all 0.4s;
+  }
+  .nav-username:hover .fa-home {
+    transform: translate(20%, -4px);
+  }
+  .nav-username:hover .nav-username-text{
+    transform: translateY(150%);
   }
   .logout-btn {
-    display: none;
+    z-index: 3;
+    opacity: 0;
     color: $red;
     position: relative;
     left: 20px;
-    top: 24px;
+    top: 10px;
+    transform: translateY(-30px);
+    transition: all 0.4s;
+    cursor: pointer;
+  }
+  .logout-btn.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
 
@@ -143,13 +174,13 @@ body {
     padding-bottom: 2em;
   }
   #borrow{
-
+    margin-top: 0;
+    padding-bottom: 2em;
     border-right: 1px solid white;
   }
   .box{
     border: 1px solid white;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding:10px 15px;
     font-size: 1.5em;
     text-align: center;
   }
@@ -321,7 +352,7 @@ body {
 
 #borrow{
   padding-bottom: 80px;
-  
+
   .question{
     h2{
       font-size: 1.5em;
@@ -333,6 +364,7 @@ body {
     margin-top: 20px;
     .swatch{
       cursor: pointer;
+      margin-bottom: 20px;
 
       img{
         width:100%;
@@ -346,6 +378,7 @@ body {
 #borrowDresses{
   background:#f3f3f3;
   padding-bottom: 40px;
+  min-height: 600px;
 
   .dresses{
     .dress{
@@ -399,9 +432,14 @@ body {
 }
 
 #pic {
-   margin-left:7%; 
+   margin-left:20%; 
    float:left;
    margin-right: 5%;
+   @media (max-width: 768px) {
+    margin:auto;
+    display:block;
+    float:none;
+   }
  } 
 
 #prodname{
@@ -414,11 +452,38 @@ body {
 .prodB{
   margin-left: 10%;
 }
+.productB{
+  @media (max-width: 768px) {
+    margin-left: 10%;
+  }
+}
+
+.MiPrice{
+  @media (max-width: 768px) {
+    margin-left: 10%;
+  }
+}
+
+.miButtons{
+  
+  @media (max-width: 768px) {
+    margin-left: 10%;
+    text-align: center;
+
+    button{
+      display:block;
+      margin-top: 10px;
+    }
+  }
+}
 
 #description{
   margin-right: 10%;
 
   text-align: justify;
+  @media (max-width: 768px) {
+    margin-left: 10%;
+  }
 }
 
 .submit-product-error {

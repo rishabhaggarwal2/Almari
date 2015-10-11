@@ -1,21 +1,25 @@
 <div>
 	<br>
 	<link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
-	<div>
-		<img id = "pic" src="{{product.imageURL}}">
-	</div>
-	<div id="desc">
-		<h2 id="prodname">{{product.name}}</h2>
-		<h4 class="productB" ng-model="product.brand">{{product.brand}} ( {{product.gender}} )  |  {{product.category}}  |  {{product.size}} </h4>
-		<i>{{product.price}}</i>
-		<br>
-		<p id="description">{{product.description}}</p>
-		<br>
-		<button type="button" class="btn btnPrimary">Borrow </button>
-		<button type="button" class="btn btnPrimary btnOutline">Add to WishList</button>
-		
-		<button type="button" class="btn btnPrimary btnOutline">Buy New</button>
-	</div>
 
+	<div ng-repeat="product in products">
+		<div>
+			<img id = "pic" src="{{product.get('imageUrl')}}">
+		</div>
+		<div id="desc">
+			<h2 id="prodname">{{product.get('name')}}</h2>
+			<h4 class="productB" ng-model="product.brand">{{product.get('company')}} ( {{product.get('gender')}} )  |  {{product.get('category')}}  |  {{product.get('size')}} </h4>
+			<i class="MiPrice">${{product.get('price')}}</i>
+			<br>
+			<p id="description">{{product.get('description')}}</p>
+			<br>
+			<div class="miButtons">
+				<button type="button" class="btn btnPrimary">Borrow </button>
+				<button type="button" class="btn btnPrimary btnOutline">Add to WishList</button>
+				
+				<button type="button" class="btn btnPrimary btnOutline">Buy New</button>
+			</div>
+		</div>
+	</div>
 </div>
 

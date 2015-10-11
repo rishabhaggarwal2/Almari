@@ -9,7 +9,7 @@ angular.module('myApp.borrow', ['ngRoute'])
   });
 }])
 
-.controller('BorrowCtrl', ['$scope','ParseService', function($scope, ParseService) {
+.controller('BorrowCtrl', ['$scope','ParseService', '$location', function($scope, ParseService, $location) {
 	$scope.categories = ["Party", "Formal", "Wedding", "Cultural", 'Accessories', "Prom",];
 
 	$scope.products = [];
@@ -33,8 +33,15 @@ angular.module('myApp.borrow', ['ngRoute'])
 		 ParseService.findProducts({category:category}, function(err, results) {
 	      $scope.products = results;
 	      $scope.$apply();
+	      
 	    });
 	};
 
+
+	$scope.open = function(product){
+
+		var url = "/product?pid="+product.get('productId');
+		$location.url(url);
+	};
 
 }]);
