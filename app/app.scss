@@ -280,9 +280,10 @@ body {
         }
       }
     }
-  }}
+  }
+}
 
-#pic{
+#pic {
    margin-left:7%; 
    float:left;
    margin-right: 5%;
@@ -305,12 +306,9 @@ body {
   text-align: justify;
 }
 
-  }
-  .submit-product-error {
-    color: $red;
-    display: none;
-    height: 30px;
-    position: relative
-  }
+.submit-product-error {
+  color: $red;
+  display: none;
+  height: 30px;   
+  position: relative
 }
->>>>>>> d0a822a4231fb713f60e29718680c48860623482
