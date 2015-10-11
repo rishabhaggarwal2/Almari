@@ -147,6 +147,12 @@ angular.module('parseService', [])
       });
     },
 
+    /* My products: products I own, have pinned, and have currently borrowed */
+    findMyProducts: function findMyProducts(done) {
+      var ownedQuery = new Parse.query(Product);
+      ownedQuery.equalTo('owner', loggedInUser.get('username'));
+    },
+
     findProduct: function findProduct(pid, done) {
       if (productsCache && productsCache.length > 0) {
         var match = _.filter(productsCache, function(obj) {

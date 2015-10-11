@@ -1,7 +1,6 @@
 <div class="nice-fat-button" ng-click="showProducts()">
   <div ng-repeat="product in products">
-    <h1>{{product.get('category')}}</h1>
-    <h2>{{product.get('gender')}}</h2>
+    <img ng-src="{{product.get('imageUrl')}}">
   </div>
 </div>
 <style>

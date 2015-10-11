@@ -17,8 +17,10 @@ angular.module('myApp.borrow', ['ngRoute'])
 	$scope.showProducts = function() {
     ParseService.findProducts({}, function(err, results) {
       $scope.products = results;
-    })};
+      $scope.$apply();
+    });
+  };
 
-    $scope.showProducts();
+  $scope.showProducts();
 
 }]);

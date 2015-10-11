@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	<div class="container" id="borrow">
 		<div class="row text-center question">
-				<h2>What are you looking for?</h2>	
+				<h2 ng-click="showProducts()">What are you looking for?</h2>	
 		</div>
 		<div class="row swatches">
 			<div class="swatch col-xs-4 col-md-2" ng-repeat="category in categories track by $index">
@@ -13,8 +13,8 @@
 <div class="container-fluid" id="borrowDresses">
 	<div class="container">
 		<div class="row dresses">
-			<div class="col-xs-6 col-md-3 dress" ng-repeat = "product in products">
-			<img src="{{product.get('imageUrl')}}">
+			<div class="col-xs-6 col-md-3 dress" ng-repeat="product in products">
+			<img ng-src="{{product.get('imageUrl')}}">
 			</div>
 		</div>
 	</div>

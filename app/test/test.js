@@ -18,4 +18,6 @@ function($scope, ParseService) {
       $scope.products = results;
     });
   };
+
+  $scope.showProducts();
 }]);
