@@ -1,4 +1,10 @@
 $red: #f25f5c;
+*{
+  transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -ms-transition:0.2s ease all;
+}
 body {
   font-family: 'Lato';
   font-weight: 300;
@@ -291,6 +297,7 @@ body {
 
 #borrow{
   margin-top: 80px;
+  padding-bottom: 80px;
   .question{
     h2{
       font-size: 1.5em;
@@ -313,19 +320,59 @@ body {
 }
 
 #borrowDresses{
-  margin-top: 80px;
   background:#f3f3f3;
+  padding-bottom: 40px;
 
   .dresses{
     .dress{
       margin-top: 40px;
+
+
+      img{
+        width:100%;
+      }
+    }
+    h5,h6{
+      margin-bottom: 0;
+    }
+    h6{
+      margin-top: 5px;
+      margin-bottom: 5px;
     }
     p{
       text-align:center;
+      margin:0;
+    font-weight: 400;
     }
+    .dressPrice{
+      color:$red;
+      position:relative;
+    }
+    .retail{
+        color:#777;
+        font-size: 0.7em;
+        vertical-align: text-bottom;
+      }
   }
 }
 
+.pageSelected{
+  color:#fff !important;
+
+  h2{
+    color:#fff !important;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+  .swatch{
+    -webkit-filter: grayscale(1);
+    opacity: 0.8;
+  }
+  .swatch:hover{
+    opacity:1;
+  }
+
+}
 
 #pic {
    margin-left:7%; 
@@ -355,4 +402,8 @@ body {
   display: none;
   height: 30px;   
   position: relative
+}
+
+.page_Formal{
+
 }

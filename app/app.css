@@ -1,3 +1,9 @@
+* {
+  transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all; }
+
 body {
   font-family: 'Lato';
   font-weight: 300;
@@ -213,7 +219,8 @@ body {
     position: relative; }
 
 #borrow {
-  margin-top: 80px; }
+  margin-top: 80px;
+  padding-bottom: 80px; }
   #borrow .question h2 {
     font-size: 1.5em;
     font-weight: 300;
@@ -227,12 +234,40 @@ body {
         cursor: pointer; }
 
 #borrowDresses {
-  margin-top: 80px;
-  background: #f3f3f3; }
+  background: #f3f3f3;
+  padding-bottom: 40px; }
   #borrowDresses .dresses .dress {
     margin-top: 40px; }
+    #borrowDresses .dresses .dress img {
+      width: 100%; }
+  #borrowDresses .dresses h5, #borrowDresses .dresses h6 {
+    margin-bottom: 0; }
+  #borrowDresses .dresses h6 {
+    margin-top: 5px;
+    margin-bottom: 5px; }
   #borrowDresses .dresses p {
-    text-align: center; }
+    text-align: center;
+    margin: 0;
+    font-weight: 400; }
+  #borrowDresses .dresses .dressPrice {
+    color: #f25f5c;
+    position: relative; }
+  #borrowDresses .dresses .retail {
+    color: #777;
+    font-size: 0.7em;
+    vertical-align: text-bottom; }
+
+.pageSelected {
+  color: #fff !important; }
+  .pageSelected h2 {
+    color: #fff !important;
+    text-transform: uppercase;
+    font-weight: 800; }
+  .pageSelected .swatch {
+    -webkit-filter: grayscale(1);
+    opacity: 0.8; }
+  .pageSelected .swatch:hover {
+    opacity: 1; }
 
 #pic {
   margin-left: 7%;

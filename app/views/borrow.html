@@ -1,10 +1,11 @@
-<div class="container-fluid">
+<div class="container-fluid {{categorySelected}}" style="background:url(images/{{selectedCategory}}.jpg) #fff">
 	<div class="container" id="borrow">
 		<div class="row text-center question">
-				<h2 ng-click="showProducts()">What are you looking for?</h2>	
+				<h2 ng-click="showProducts()" ng-hide="selectedCategory">What are you looking for?</h2>	
+				<h2 ng-show="selectedCategory">{{selectedCategory}}</h2>
 		</div>
 		<div class="row swatches">
-			<div class="swatch col-xs-4 col-md-2" ng-repeat="category in categories track by $index">
+			<div class="swatch col-xs-4 col-md-2" ng-repeat="category in categories track by $index" ng-click="selectPageCategory(category)">
 				<img src="images/swatches{{$index+1}}.jpg">
 			</div>
 		</div>
@@ -15,6 +16,12 @@
 		<div class="row dresses">
 			<div class="col-xs-6 col-md-3 dress" ng-repeat="product in products">
 			<img ng-src="{{product.get('imageUrl')}}">
+			<h5 class="text-center dressName">{{product.get('name')}}</h5>
+			<h6 class="text-center dressDetails">{{product.get('size')}} | {{product.get('gender')}}</h6>
+			<p class="dressPrice">
+				${{product.get('price')}}/week
+			</p>
+			<p class="retail">${{product.get('price') * 7 - (product.get('price') % 5)}}</p>
 			</div>
 		</div>
 	</div>
