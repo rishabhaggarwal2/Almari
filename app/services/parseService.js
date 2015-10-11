@@ -79,7 +79,7 @@ angular.module('parseService', [])
 
     /* Set product's in-use to true and add lendee. Add pid to user's products */
     borrowProduct: function borrowProduct(pid, done) {
-      if (!loggedInUser) {
+      if (!Parse.User.current()) {
         return done(new Error('Must be logged in to do this'));
       }
 
@@ -91,7 +91,7 @@ angular.module('parseService', [])
           throw new Error('Product has already been borrowed');
         }
         product.set('inUse', true);
-        product.set('lendee', loggedInUser.get('username'));
+        product.set('lendee', Parse.User.current().get('username'));
         return product.save();
       })
       .then(function() {
@@ -106,7 +106,7 @@ angular.module('parseService', [])
     },
 
     addProduct: function addProduct(fields, done) {
-      if (!loggedInUser) {
+      if (!Parse.User.current()) {
         return done(new Error('Must be logged in to do this'));
       }
 
@@ -116,7 +116,7 @@ angular.module('parseService', [])
           product.set(key, fields[key]);
         }
       });
-      product.set('owner', loggedInUser.get('username'));
+      product.set('owner', Parse.User.current().get('username'));
       product.set('pid', uuid.v1());
       product.set('inUse', false);
 
@@ -158,7 +158,7 @@ angular.module('parseService', [])
     /* My products: products I own, have pinned, and have currently borrowed */
     findMyProducts: function findMyProducts(done) {
       var ownedQuery = new Parse.query(Product);
-      ownedQuery.equalTo('owner', loggedInUser.get('username'));
+      ownedQuery.equalTo('owner', Parse.User.current().get('username'));
     },
 
     findProduct: function findProduct(pid, done) {
