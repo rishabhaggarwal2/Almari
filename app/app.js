@@ -7,6 +7,7 @@ angular.module('myApp', [
   'myApp.view2',
   'myApp.borrow',
   'myApp.landing',
+  'myApp.product',
   'myApp.version',
   'ngFileUpload',
   'ui.bootstrap',
