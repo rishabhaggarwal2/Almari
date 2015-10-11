@@ -40,14 +40,25 @@ angular.module('parseService', ['ngResource'])
     },
 
     addProduct: function addProduct(fields, done) {
+      // FIXME: remove once invariant in place
+      if (!loggedInUser) {
+        return done(new Error('Must be logged in to do this'));
+      }
+
       var product = new Product();
-      ['price', 'deposit', 'link', 'category', 'imageUrl'].forEach(function(key) {
+      ['gender', 'size', 'productId', 'category', 'imageUrl', 'description', 'name'].forEach(function(key) {
         if (fields[key]) {
           product.set(key, fields[key]);
         }
       });
       product.set('owner', loggedInUser.get('username'));
-      product.set('id', uuid.v1());
+      product.set('pid', uuid.v1());
+
+      var productACL = new Parse.ACL();
+      productACL.setPublicReadAccess(true);
+      productACL.setWriteAccess(Parse.User.current().id, true);
+      product.setACL(productACL);
+
       product.save(null, {
         success: function(product) {
           done(null, product);

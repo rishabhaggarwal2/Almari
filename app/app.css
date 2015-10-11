@@ -193,5 +193,10 @@ body {
         border: none;
         border-bottom: 1px solid #777;
         width: 200px; } }
+  #postDress .submit-product-error {
+    color: #f25f5c;
+    display: none;
+    height: 30px;
+    position: relative; }
 
 /*# sourceMappingURL=app.css.map */

@@ -268,4 +268,10 @@ body {
       }
     }
   }
+  .submit-product-error {
+    color: $red;
+    display: none;
+    height: 30px;
+    position: relative
+  }
 }
