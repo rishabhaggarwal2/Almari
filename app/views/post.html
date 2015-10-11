@@ -2,15 +2,15 @@
 	<div class="container" id="postDress">
 		<div class="row">
 			<div class="col-xs-12 col-md-4 postPhoto">
-				<img src="{{product.imageURL}}" />
+				<img src="{{product.imageUrl}}" />
 			</div>
 			<div class="col-xs-12 col-md-8">
 				<div class="input productNameHolder">
 					<input type="text" placeholder="Enter Product Name" class="productName" ng-model="product.name">
 				</div>
 				<div class="input productDetailsHolder">
-					Brand: <input type="text" placeholder="eg. Banana Republic" class="productName" ng-model="product.brand">
-					ProductID: <input type="text" placeholder="eg. 20461526" class="productName" ng-model="product.UID">
+					Brand: <input type="text" placeholder="eg. Banana Republic" class="productName" ng-model="product.company">
+					ProductID: <input type="text" placeholder="eg. 124567002" class="productName" ng-model="product.productId" ng-blur="updateImage()">
 				</div>
 				<div class="input productDetailsHolder ">
 					Size: 
@@ -31,10 +31,13 @@
 					</div>
 				</div>
 
+				<div class="input productDetailsHolder">
+					Price: $<input type="text" placeholder="30" class="productName" ng-model="product.price">
+				</div>
 
 				<div class="input productDetailsHolder">
 					<p>Enter a brief description about your product</p>
-					<textarea ng-model="product.desc">
+					<textarea ng-model="product.description">
 					</textarea>
 				</div>
 				<div class="input">

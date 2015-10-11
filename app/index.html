@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Formfor.me</title>
+  <title>Almari | A virtual wardrobe</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
@@ -29,6 +29,24 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
+  <nav class="persistent-nav" ng-controller="navCtrl">
+    <button type="button" class="btn btn-primary toggle-login" id="login" ng-click="loginShow()" ng-show="loggingIn === 0">Login</button>
+    <div class="form-group login-container" ng-show="loggingIn === 1">
+      <div class="login-inputs">
+        <input type="email" ng-model="signupUsername"class="form-control-fancy" id="inputEmail" placeholder="Email">
+        <input type="password" ng-model="signupPassword" class="form-control-fancy" id="inputPassword" placeholder="Password">
+        <input type="password" ng-model="signupConfirm" class="form-control-fancy" id="inputConfirmPassword" placeholder="Confirm password">
+      </div>
+      <div class="login-buttons">
+        <button type="button" class="btn btn-primary" id="login" ng-click="login()">Login</button>
+        <button type="button" class="btn btn-primary btn-signup" id="login" ng-click="signupMode()">Sign up</button>
+        <span class="form-error"></span>
+      </div>
+    </div>
+    <div class="nav-username" ng-show="loggingIn === 2" ng-click="home()" ng-mouseover="showLogout()" ng-mouseleave="hideLogout()">{{username}}</div>
+    <div class="logout-btn" ng-click="logout()">Sign out</div>
+  </nav>
+
   <div ng-view></div>
 
   <!-- In production use:
@@ -40,8 +58,7 @@
   <script src="app.js"></script>
   <script src="upload.js"></script>
   <script src="landing/landing.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
+  <script src="nav.js"></script>
   <script src="views/borrow.js"></script>
   <script src="views/post.js"></script>
   <script src="views/product.js"></script>
@@ -56,6 +73,8 @@
   <script src="bower_components/parse/parse.min.js"></script>
   <script src="bower_components/node-uuid/uuid.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-mocks/angular-mocks.js"></script>
   <script src="services/parseService.js"></script>
+  <script src="test/test.js"></script>
 </body>
 </html>

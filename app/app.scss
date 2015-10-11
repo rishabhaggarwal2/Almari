@@ -1,4 +1,10 @@
 $red: #f25f5c;
+*{
+  transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -ms-transition:0.2s ease all;
+}
 body {
   font-family: 'Lato';
   font-weight: 300;
@@ -10,23 +16,20 @@ body {
   width:100%; 
 }
 
-.landing{
+.persistent-nav {
+  min-height: 70px;
+}
 
-  #almari{
-
-    margin-top: 15%;
-    margin-bottom: 10%;
-  }
-
-  #login{
+.persistent-nav {
+  #login {
+    display: inline-block;
     margin-top: 10px;
+    margin-left: 10px;
     background-color: #f25f5c;
     border: #f25f5c;
-    float:left;
   }
 
   .form-control{
-    margin-top: 10px;
     width: 30%;
     float: left;
     margin-left: 2%;
@@ -34,12 +37,11 @@ body {
   }
 
   .form-control-fancy {
-    margin-top: 10px;
     width: 25%;
     float: left;
     margin-left: 2%;
     margin-right: 2%;
-    display: block;
+    display: inline-block;
     height: 34px;
     border-radius: 0;
     border: none;
@@ -54,17 +56,20 @@ body {
   .form-control-fancy::-webkit-input-placeholder {
     transition: all 0.4s;
     transform: translate(0px, 0px);
+    opacity: 1;
   }
   .form-control-fancy:focus::-webkit-input-placeholder {
     transform: translate(0px, 34px);
+    opacity: 0;
   }
   .login-container {
     display: block;
+    margin-top: 10px
   }
   .login-buttons {
     position: absolute;
-    left: 72px;
-    top: 42px;
+    left: 28px;
+    top: 48px;
     width: 90%
   }
   .login-buttons .btn {
@@ -79,6 +84,32 @@ body {
     position: relative;
     top: 16px;
     left: 8px;
+  }
+  .nav-username {
+    display: inline;
+    color: $red;
+    border: 1px solid $red;
+    border-radius: 10%;
+    padding: 8px;
+    position: relative;
+    left: 10px;
+    top: 18px;
+    cursor: pointer;
+  }
+  .logout-btn {
+    display: none;
+    color: $red;
+    position: relative;
+    left: 20px;
+    top: 24px;
+  }
+}
+
+.landing{
+
+  #almari{
+    margin-top: 15%;
+    margin-bottom: 10%;
   }
 
   #alm{
@@ -96,8 +127,8 @@ body {
   }
 
   .sec1{
-    margin-right: -10%;
-    margin-left: -10%; 
+    margin-right: -15px;
+    margin-left: -15px; 
     padding-top: 1%;
     background-color: #f25f5c;
     color: white;
@@ -159,7 +190,6 @@ body {
   background:$red;
 }
 #postDress{
-  margin-top: 80px;
   color:#333;
   overflow-x:hidden;
   .postPhoto{
@@ -257,13 +287,13 @@ body {
     }
     textarea{
       width: 80%;
-      font-size: 14px;
-      padding: 20px;
-      background-color: #eee;
-      border: 0;
-      font-weight: 400;
-      color: #777;
-      height: 183px;
+          font-size: 14px;
+          padding: 20px;
+          background-color: #eee;
+          border: 0;
+          font-weight: 400;
+          color: #777;
+          height: 114px;
     }
   }
   .Category{
@@ -280,9 +310,95 @@ body {
         }
       }
     }
-  }}
+  }
+  .submit-product-error {
+    color: $red;
+    display: none;
+    height: 30px;
+    position: relative
+  }
+}
 
-#pic{
+#borrow{
+  padding-bottom: 80px;
+  
+  .question{
+    h2{
+      font-size: 1.5em;
+      font-weight: 300;
+      color:#333;
+    }
+  }
+  .swatches{
+    margin-top: 20px;
+    .swatch{
+      cursor: pointer;
+
+      img{
+        width:100%;
+        cursor: pointer;
+
+      }
+    }
+  }
+}
+
+#borrowDresses{
+  background:#f3f3f3;
+  padding-bottom: 40px;
+
+  .dresses{
+    .dress{
+      margin-top: 40px;
+
+
+      img{
+        width:100%;
+      }
+    }
+    h5,h6{
+      margin-bottom: 0;
+    }
+    h6{
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    p{
+      text-align:center;
+      margin:0;
+    font-weight: 400;
+    }
+    .dressPrice{
+      color:$red;
+      position:relative;
+    }
+    .retail{
+        color:#777;
+        font-size: 0.7em;
+        vertical-align: text-bottom;
+      }
+  }
+}
+
+.pageSelected{
+  color:#fff !important;
+
+  h2{
+    color:#fff !important;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+  .swatch{
+    -webkit-filter: grayscale(1);
+    opacity: 0.8;
+  }
+  .swatch:hover{
+    opacity:1;
+  }
+
+}
+
+#pic {
    margin-left:7%; 
    float:left;
    margin-right: 5%;
@@ -305,12 +421,13 @@ body {
   text-align: justify;
 }
 
-  }
-  .submit-product-error {
-    color: $red;
-    display: none;
-    height: 30px;
-    position: relative
-  }
+.submit-product-error {
+  color: $red;
+  display: none;
+  height: 30px;   
+  position: relative
 }
->>>>>>> d0a822a4231fb713f60e29718680c48860623482
+
+.page_Formal{
+
+}
