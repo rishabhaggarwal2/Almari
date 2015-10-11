@@ -175,13 +175,13 @@ body {
     padding-bottom: 2em;
   }
   #borrow{
-
+    margin-top: 0;
+    padding-bottom: 2em;
     border-right: 1px solid white;
   }
   .box{
     border: 1px solid white;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding:10px 15px;
     font-size: 1.5em;
     text-align: center;
   }
@@ -353,7 +353,7 @@ body {
 
 #borrow{
   padding-bottom: 80px;
-  
+
   .question{
     h2{
       font-size: 1.5em;
@@ -365,6 +365,7 @@ body {
     margin-top: 20px;
     .swatch{
       cursor: pointer;
+      margin-bottom: 20px;
 
       img{
         width:100%;
@@ -378,6 +379,7 @@ body {
 #borrowDresses{
   background:#f3f3f3;
   padding-bottom: 40px;
+  min-height: 600px;
 
   .dresses{
     .dress{
@@ -431,9 +433,14 @@ body {
 }
 
 #pic {
-   margin-left:7%; 
+   margin-left:20%; 
    float:left;
    margin-right: 5%;
+   @media (max-width: 768px) {
+    margin:auto;
+    display:block;
+    float:none;
+   }
  } 
 
 #prodname{
@@ -446,11 +453,38 @@ body {
 .prodB{
   margin-left: 10%;
 }
+.productB{
+  @media (max-width: 768px) {
+    margin-left: 10%;
+  }
+}
+
+.MiPrice{
+  @media (max-width: 768px) {
+    margin-left: 10%;
+  }
+}
+
+.miButtons{
+  
+  @media (max-width: 768px) {
+    margin-left: 10%;
+    text-align: center;
+
+    button{
+      display:block;
+      margin-top: 10px;
+    }
+  }
+}
 
 #description{
   margin-right: 10%;
 
   text-align: justify;
+  @media (max-width: 768px) {
+    margin-left: 10%;
+  }
 }
 
 .submit-product-error {

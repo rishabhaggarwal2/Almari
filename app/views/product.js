@@ -9,24 +9,32 @@ angular.module('myApp.product', ['ngRoute'])
   });
 }])
 
-.controller('ProductController', ['$scope', function($scope) {
-	$scope.product = {};
-	$scope.product.imageURL = "http://www.gap.com/webcontent/0009/935/338/cn9935338.jpg";
-	$scope.product.name = "Grey leather jacket";
-	$scope.product.brand = "Old Navy";
-	$scope.product.size = "XL";
-	$scope.product.gender="F";
-	$scope.product.category="Formal";
-	$scope.product.price="$25";
-	$scope.product.description= "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur.";
+.controller('ProductController', ['$scope','$location', 'ParseService', function($scope, $location, ParseService) {
 
-	$scope.selectSize = function(size){
-		$scope.product.size = size;
-	};
-	$scope.selectGender = function(gender){
-		$scope.product.gender = gender;
-	};
-	$scope.selectCategory = function(category){
-		$scope.product.category = category;
-	};
+	
+
+	var params = $location.search();
+	console.log(params);
+
+
+	// ParseService.findProductByPid(params.pid, function(err, results) {
+ //      $scope.products = results;
+ //      $scope.$apply();
+ //      console.log(results);
+ //    });
+
+    ParseService.findProducts({productId:params.pid}, function(err, results) {
+      $scope.products = results;
+      $scope.$apply();
+      console.log(results);
+      $scope.product.name = $scope.products[0].get('name');
+      $scope.product.imageUrl = $scope.products[0].get('imageUrl');
+      $scope.product.company = $scope.products[0].get('company');
+      $scope.product.size = $scope.products[0].get('size');
+      $scope.product.gender = $scope.products[0].get('gender');
+      $scope.product.category = $scope.products[0].get('category');
+      $scope.product.price = $scope.products[0].get('price');
+      $scope.product.description = $scope.products[0].get('description');
+	 });
+
 }]);

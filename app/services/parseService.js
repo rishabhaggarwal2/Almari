@@ -161,6 +161,18 @@ angular.module('parseService', [])
       ownedQuery.equalTo('owner', Parse.User.current().get('username'));
     },
 
+
+
+    findProductByPid: function findProductByPid(pid, done) {
+        var query = new Parse.Query(Product);
+        query.equalTo('id', pid);
+        query.first().then(function(result) {
+          done(null, result);
+        }, done);
+      },
+      
+
+
     findProduct: function findProduct(pid, done) {
       if (productsCache && productsCache.length > 0) {
         var match = _.filter(productsCache, function(obj) {
@@ -179,7 +191,7 @@ angular.module('parseService', [])
 
   function _findProductByPid(pid, done) {
     var query = new Parse.Query(Product);
-    query.equalTo('pid', pid);
+    query.equalTo('id', pid);
     query.first().then(function(result) {
       done(null, result);
     }, done);
