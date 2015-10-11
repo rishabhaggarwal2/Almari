@@ -23,6 +23,7 @@
     price
     deposit
     retail
+    company
     link
     imageUrl
     verified

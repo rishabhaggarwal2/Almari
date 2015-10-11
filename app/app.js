@@ -13,7 +13,8 @@ angular.module('myApp', [
   // 'myApp.env',
   'ngFileUpload',
   'ui.bootstrap',
-  'parseService'
+  'parseService',
+  'parseService.test'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/landing'});

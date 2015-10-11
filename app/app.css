@@ -1,41 +1,233 @@
-/*
-Error: Invalid CSS after "}": expected selector or at-rule, was "}"
-        on line 308 of app.scss
+body {
+  font-family: 'Lato';
+  font-weight: 300;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%; }
 
-303:   margin-right: 10%;
-304: 
-305:   text-align: justify;
-306: }
-307: 
-308:   }
-309:   .submit-product-error {
-310:     color: $red;
-311:     display: none;
-312:     height: 30px;
-313:     position: relative
+.landing #almari {
+  margin-top: 15%;
+  margin-bottom: 10%; }
+.landing #login {
+  margin-top: 10px;
+  background-color: #f25f5c;
+  border: #f25f5c;
+  float: left; }
+.landing .form-control {
+  margin-top: 10px;
+  width: 30%;
+  float: left;
+  margin-left: 2%;
+  margin-right: 2%; }
+.landing .form-control-fancy {
+  margin-top: 10px;
+  width: 25%;
+  float: left;
+  margin-left: 2%;
+  margin-right: 2%;
+  display: block;
+  height: 34px;
+  border-radius: 0;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  transition: all 0.4s; }
+.landing .form-control-fancy:focus {
+  outline: none;
+  border-bottom: 3px solid #f25f5c; }
+.landing .form-control-fancy::-webkit-input-placeholder {
+  transition: all 0.4s;
+  transform: translate(0px, 0px); }
+.landing .form-control-fancy:focus::-webkit-input-placeholder {
+  transform: translate(0px, 34px); }
+.landing .login-container {
+  display: block; }
+.landing .login-buttons {
+  position: absolute;
+  left: 72px;
+  top: 42px;
+  width: 90%; }
+.landing .login-buttons .btn {
+  margin: 0px 6px; }
+.landing #inputConfirmPassword {
+  display: none; }
+.landing .form-error {
+  color: #f25f5c;
+  font-weight: 500;
+  position: relative;
+  top: 16px;
+  left: 8px; }
+.landing #alm {
+  font-size: 6em;
+  font-family: 'Mr De Haviland', cursive;
+  color: #f25f5c; }
+.landing #sub {
+  font-size: 1em;
+  font-family: 'Lato', sans-serif;
+  margin-top: -20px;
+  font-weight: 700;
+  color: #50514F; }
+.landing .sec1 {
+  margin-right: -10%;
+  margin-left: -10%;
+  padding-top: 1%;
+  background-color: #f25f5c;
+  color: white; }
+.landing #toprow {
+  margin-top: 5%; }
+.landing .col-md-6 {
+  padding-top: 3em;
+  padding-bottom: 2em; }
+.landing #borrow {
+  border-right: 1px solid white; }
+.landing .box {
+  border: 1px solid white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 1.5em;
+  text-align: center; }
+.landing .col-md-4 {
+  margin: 0 auto;
+  float: none; }
+.landing .btn:hover {
+  color: #F1F5F2; }
+.landing .icon {
+  margin-bottom: 1.5em; }
 
-Backtrace:
-app.scss:308
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1161:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1097:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:43:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/engine.rb:403:in `_to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/engine.rb:378:in `_render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/engine.rb:295:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:328:in `block in watch'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:252:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"}\": expected selector or at-rule, was \"}\"\A         on line 308 of app.scss\A \A 303:   margin-right: 10%;\A 304: \A 305:   text-align: justify;\A 306: }\A 307: \A 308:   }\A 309:   .submit-product-error {\A 310:     color: $red;\A 311:     display: none;\A 312:     height: 30px;\A 313:     position: relative"; }
+.btnPrimary {
+  border-radius: 0;
+  background-color: #f25f5c;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-right: 10px; }
+
+.btnOutline {
+  border-radius: 0;
+  border: 1px solid #f25f5c;
+  background-color: transparent;
+  color: #f25f5c;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-right: 10px; }
+
+.btnOutline:hover {
+  background: #f25f5c; }
+
+#postDress {
+  margin-top: 80px;
+  color: #333;
+  overflow-x: hidden; }
+  #postDress .postPhoto img {
+    width: 100%;
+    min-height: 400px;
+    background: #ccc; }
+    @media (max-width: 768px) {
+      #postDress .postPhoto img {
+        min-height: auto;
+        margin-bottom: 20px; } }
+  #postDress input {
+    border: none;
+    outline: none !important; }
+  #postDress input:focus {
+    border: none;
+    outline: none !important; }
+  #postDress .productNameHolder input {
+    font-size: 1.5em; }
+  #postDress .input {
+    margin-bottom: 20px; }
+    #postDress .input input {
+      padding: 5px 0px;
+      border-bottom: 1px solid #fff; }
+      @media (max-width: 768px) {
+        #postDress .input input {
+          padding: 0px; } }
+    #postDress .input input:focus {
+      border-bottom: 1px solid #999; }
+  #postDress .productDetailsHolder {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1em;
+    color: #777 !important; }
+    #postDress .productDetailsHolder input {
+      padding: 5px;
+      border-bottom: 1px solid #fff; }
+      @media (max-width: 768px) {
+        #postDress .productDetailsHolder input {
+          padding: 5px 0px;
+          margin-bottom: 10px; } }
+    #postDress .productDetailsHolder input:focus {
+      border-bottom: 1px solid #999; }
+    #postDress .productDetailsHolder input, #postDress .productDetailsHolder .switch {
+      display: inline-block;
+      margin-right: 40px; }
+    #postDress .productDetailsHolder .switch {
+      background: none;
+      margin-left: 5px;
+      border: transparent; }
+      @media (max-width: 768px) {
+        #postDress .productDetailsHolder .switch {
+          width: 120%;
+          margin-left: 0;
+          margin-bottom: 10px; } }
+      #postDress .productDetailsHolder .switch button {
+        background: none;
+        outline: none;
+        border: none;
+        border-right: 1px solid #777;
+        width: 39px; }
+      #postDress .productDetailsHolder .switch button:hover, #postDress .productDetailsHolder .switch button.active {
+        background: #eee; }
+      #postDress .productDetailsHolder .switch button.active {
+        background: #ddd; }
+      #postDress .productDetailsHolder .switch button:last-child {
+        border: none; }
+    #postDress .productDetailsHolder p {
+      margin: 0;
+      text-transform: none; }
+    #postDress .productDetailsHolder textarea {
+      width: 80%;
+      font-size: 14px;
+      padding: 20px;
+      background-color: #eee;
+      border: 0;
+      font-weight: 400;
+      color: #777;
+      height: 183px; }
+  #postDress .Category .switch button {
+    width: auto;
+    padding: 5px 10px; }
+    @media (max-width: 768px) {
+      #postDress .Category .switch button {
+        display: block;
+        padding: 5px 0;
+        border: none;
+        border-bottom: 1px solid #777;
+        width: 200px; } }
+
+#pic {
+  margin-left: 7%;
+  float: left;
+  margin-right: 5%; }
+
+#prodname {
+  color: #f25f5c;
+  margin-left: 10%;
+  font-family: 'Lora', serif; }
+
+.prodB {
+  margin-left: 10%; }
+
+#description {
+  margin-right: 10%;
+  text-align: justify; }
+
+.submit-product-error {
+  color: #f25f5c;
+  display: none;
+  height: 30px;
+  position: relative; }
+
+/*# sourceMappingURL=app.css.map */

@@ -103,7 +103,7 @@ angular.module('parseService', [])
       }
 
       var product = new Product();
-      ['gender', 'size', 'productId', 'category', 'imageUrl', 'description', 'name'].forEach(function(key) {
+      ['gender', 'size', 'productId', 'category', 'imageUrl', 'description', 'name', 'company', 'imageUrl'].forEach(function(key) {
         if (fields[key]) {
           product.set(key, fields[key]);
         }
@@ -132,7 +132,7 @@ angular.module('parseService', [])
      * 
      *   findProducts({category: 'Wedding', size 'S'}, callback);
      */
-    findProducts: function findProductsByCategory(filters, done) {
+    findProducts: function findProducts(filters, done) {
       var query = new Parse.Query(Product);
       _.forOwn(filters, function(val, key) {
         query.equalTo(key, val);
@@ -166,12 +166,9 @@ angular.module('parseService', [])
   function _findProductByPid(pid, done) {
     var query = new Parse.Query(Product);
     query.equalTo('pid', pid);
-    query.first({
-      success: function(product) {
-        done(null, product);
-      },
-      error: done
-    });
+    query.first().then(function(result) {
+      done(null, result);
+    }, done);
   }
 
   return ParseService;

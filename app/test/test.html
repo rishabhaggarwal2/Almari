@@ -1,0 +1,13 @@
+<div class="nice-fat-button" ng-click="showProducts()">
+  <div ng-repeat="product in products">
+    <h1>{{product.get('category')}}</h1>
+    <h2>{{product.get('gender')}}</h2>
+  </div>
+</div>
+<style>
+.nice-fat-button {
+  height: 100px;
+  width: 100px;
+  background: yellow;
+}
+</style>
