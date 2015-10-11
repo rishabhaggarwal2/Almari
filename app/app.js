@@ -7,12 +7,14 @@ angular.module('myApp', [
   'myApp.view2',
   'myApp.borrow',
   'myApp.landing',
+  'myApp.product',
   'myApp.version',
   // uncomment to load local env vars and use 'config' global constant
   // 'myApp.env',
   'ngFileUpload',
   'ui.bootstrap',
-  'parseService'
+  'parseService',
+  'parseService.test'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/landing'});

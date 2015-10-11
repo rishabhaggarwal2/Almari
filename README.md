@@ -2,7 +2,7 @@
 Airbnb for clothes. Rent and Share expensive used outfits delivered right to your doorstep. 
 
 ## Getting Started
-Clone the Almari Repository
+Clone the Almari Repository.
 ### Prerequisites
 
 We use a number of node.js tools to initialize and test angular-seed. You must have node.js and

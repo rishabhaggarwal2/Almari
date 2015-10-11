@@ -101,7 +101,20 @@ body {
   background-color: #f25f5c;
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  margin-right: 10px; }
+
+.btnOutline {
+  border-radius: 0;
+  border: 1px solid #f25f5c;
+  background-color: transparent;
+  color: #f25f5c;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-right: 10px; }
+
+.btnOutline:hover {
+  background: #f25f5c; }
 
 #postDress {
   margin-top: 80px;
@@ -220,5 +233,28 @@ body {
     margin-top: 40px; }
   #borrowDresses .dresses p {
     text-align: center; }
+
+#pic {
+  margin-left: 7%;
+  float: left;
+  margin-right: 5%; }
+
+#prodname {
+  color: #f25f5c;
+  margin-left: 10%;
+  font-family: 'Lora', serif; }
+
+.prodB {
+  margin-left: 10%; }
+
+#description {
+  margin-right: 10%;
+  text-align: justify; }
+
+.submit-product-error {
+  color: #f25f5c;
+  display: none;
+  height: 30px;
+  position: relative; }
 
 /*# sourceMappingURL=app.css.map */
