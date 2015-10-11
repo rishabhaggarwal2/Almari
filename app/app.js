@@ -4,6 +4,7 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.borrow',
+  'myApp.post',
   'myApp.landing',
   'myApp.nav',
   'myApp.product',
