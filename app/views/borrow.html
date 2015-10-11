@@ -14,7 +14,7 @@
 <div class="container-fluid" id="borrowDresses">
 	<div class="container">
 		<div class="row dresses">
-			<div class="col-xs-6 col-md-3 dress" ng-repeat="product in products">
+			<div class="col-xs-6 col-md-3 dress" ng-repeat="product in products" ng-click="open(product)">
 			<img ng-src="{{product.get('imageUrl')}}">
 			<h5 class="text-center dressName">{{product.get('name')}}</h5>
 			<h6 class="text-center dressDetails">{{product.get('size')}} | {{product.get('gender')}}</h6>
