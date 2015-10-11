@@ -60,10 +60,12 @@ function($location, $scope, ParseService) {
   };
 
   $scope.showLogout = function() {
-    $('.logout-btn').slideDown(200);
+    $('.logout-btn').show().addClass('active');
   },
   $scope.hideLogout = function() {
-    $('.logout-btn').show().delay(800).slideUp(200);
+    setTimeout(function() {
+      $('.logout-btn').removeClass('active');
+    }, 500);
   },
 
   $scope.$on('$locationChangeStart', function(e) {

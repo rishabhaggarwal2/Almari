@@ -43,7 +43,10 @@
         <span class="form-error"></span>
       </div>
     </div>
-    <div class="nav-username" ng-show="loggingIn === 2" ng-click="home()" ng-mouseover="showLogout()" ng-mouseleave="hideLogout()">{{username}}</div>
+    <div class="nav-username" ng-show="loggingIn === 2" ng-click="home()" ng-mouseover="showLogout()" ng-mouseleave="hideLogout()">
+      <i class="fa fa-2x fa-home"></i>
+      <div class="nav-username-text">{{username}}</div>
+    </div>
     <div class="logout-btn" ng-click="logout()">Sign out</div>
   </nav>
 
