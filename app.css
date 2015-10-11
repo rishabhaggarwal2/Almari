@@ -1,62 +1,23 @@
-body {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  margin: 0 auto;
-  padding: 0;
-}
+/*
+Errno::ENOENT: No such file or directory - app.scss
 
-#almari{
-	
-	margin-top: 15%;
-	margin-bottom: 10%;
-}
-#alm{
-	font-size: 6em;
-	font-family: 'Mr De Haviland', cursive;
-	color: #F25F5C;
-}
-
-#sub{
-	font-size: 1em;
-	font-family: 'Lato', sans-serif;
-	margin-top: -20px;
-	font-weight: 700;
-	color: #50514F;
-}
-
-.sec1{
-	margin-right: -10%;
-	margin-left: -10%; 
-	background-color: #F25F5C;
-	color: white;
-}
-
-#toprow{
-	margin-top: 5%;
-
-}
-.col-md-6{
-	padding-top: 4em;
-	padding-bottom: 2em;
-}
-#borrow{
-
-	border-right: 1px solid white;
-}
-.box{
-	border: 1px solid white;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	font-size: 1.5em;
-	text-align: center;
-}
-
-.col-md-4{
-	margin: 0 auto;
-	float: none;
-
-}
-
-.btn:hover{
-	color: #F1F5F2;
-}
+Backtrace:
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:482:in `read'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:482:in `update_stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:293:in `watch'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin.rb:108:in `method_missing'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/exec/sass_scss.rb:381:in `watch_or_update'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/exec/base.rb:52:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/exec/base.rb:19:in `parse!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/bin/sass:13:in `<top (required)>'
+/usr/bin/sass:23:in `load'
+/usr/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Errno::ENOENT: No such file or directory - app.scss"; }

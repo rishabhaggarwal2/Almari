@@ -13,7 +13,7 @@ body {
 .landing{
 
   #almari{
-    
+
     margin-top: 15%;
     margin-bottom: 10%;
   }
@@ -144,6 +144,19 @@ body {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-right: 10px;
+}
+.btnOutline{
+  border-radius: 0;
+  border:1px solid $red;
+  background-color: transparent;
+  color: $red;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-right: 10px;
+}
+.btnOutline:hover{
+  background:$red;
 }
 #postDress{
   margin-top: 80px;
@@ -244,13 +257,13 @@ body {
     }
     textarea{
       width: 80%;
-          font-size: 14px;
-          padding: 20px;
-          background-color: #eee;
-          border: 0;
-          font-weight: 400;
-          color: #777;
-          height: 183px;
+      font-size: 14px;
+      padding: 20px;
+      background-color: #eee;
+      border: 0;
+      font-weight: 400;
+      color: #777;
+      height: 183px;
     }
   }
   .Category{
@@ -267,6 +280,31 @@ body {
         }
       }
     }
+  }}
+
+#pic{
+   margin-left:7%; 
+   float:left;
+   margin-right: 5%;
+ } 
+
+#prodname{
+  color: $red;
+  margin-left: 10%;
+  font-family: 'Lora', serif;
+}
+
+
+.prodB{
+  margin-left: 10%;
+}
+
+#description{
+  margin-right: 10%;
+
+  text-align: justify;
+}
+
   }
   .submit-product-error {
     color: $red;
@@ -275,3 +313,4 @@ body {
     position: relative
   }
 }
+>>>>>>> d0a822a4231fb713f60e29718680c48860623482
