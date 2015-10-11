@@ -54,7 +54,15 @@ angular.module('parseService', [])
     },
 
     logout: function logout() {
-      Parse.User.logout();
+      Parse.User.logOut();
+    },
+
+    username: function username() {
+      if (Parse.User.current()) {
+        return Parse.User.current().get('username');
+      } else {
+        return '';
+      }
     },
 
     pinProduct: function pinProduct(pid, done) {

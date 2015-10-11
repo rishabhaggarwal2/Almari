@@ -8,57 +8,79 @@ body {
   overflow-x: hidden;
   width: 100%; }
 
-.landing #almari {
-  margin-top: 15%;
-  margin-bottom: 10%; }
-.landing #login {
+.persistent-nav {
+  min-height: 70px; }
+
+.persistent-nav #login {
+  display: inline-block;
   margin-top: 10px;
+  margin-left: 10px;
   background-color: #f25f5c;
-  border: #f25f5c;
-  float: left; }
-.landing .form-control {
-  margin-top: 10px;
+  border: #f25f5c; }
+.persistent-nav .form-control {
   width: 30%;
   float: left;
   margin-left: 2%;
   margin-right: 2%; }
-.landing .form-control-fancy {
-  margin-top: 10px;
+.persistent-nav .form-control-fancy {
   width: 25%;
   float: left;
   margin-left: 2%;
   margin-right: 2%;
-  display: block;
+  display: inline-block;
   height: 34px;
   border-radius: 0;
   border: none;
   border-bottom: 2px solid #ccc;
   transition: all 0.4s; }
-.landing .form-control-fancy:focus {
+.persistent-nav .form-control-fancy:focus {
   outline: none;
   border-bottom: 3px solid #f25f5c; }
-.landing .form-control-fancy::-webkit-input-placeholder {
+.persistent-nav .form-control-fancy::-webkit-input-placeholder {
   transition: all 0.4s;
-  transform: translate(0px, 0px); }
-.landing .form-control-fancy:focus::-webkit-input-placeholder {
-  transform: translate(0px, 34px); }
-.landing .login-container {
-  display: block; }
-.landing .login-buttons {
+  transform: translate(0px, 0px);
+  opacity: 1; }
+.persistent-nav .form-control-fancy:focus::-webkit-input-placeholder {
+  transform: translate(0px, 34px);
+  opacity: 0; }
+.persistent-nav .login-container {
+  display: block;
+  margin-top: 10px; }
+.persistent-nav .login-buttons {
   position: absolute;
-  left: 72px;
-  top: 42px;
+  left: 28px;
+  top: 48px;
   width: 90%; }
-.landing .login-buttons .btn {
+.persistent-nav .login-buttons .btn {
   margin: 0px 6px; }
-.landing #inputConfirmPassword {
+.persistent-nav #inputConfirmPassword {
   display: none; }
-.landing .form-error {
+.persistent-nav .form-error {
   color: #f25f5c;
   font-weight: 500;
   position: relative;
   top: 16px;
   left: 8px; }
+.persistent-nav .nav-username {
+  display: inline;
+  color: #f25f5c;
+  border: 1px solid #f25f5c;
+  border-radius: 10%;
+  padding: 8px;
+  position: relative;
+  left: 10px;
+  top: 18px;
+  cursor: pointer; }
+.persistent-nav .logout-btn {
+  display: none;
+  color: #f25f5c;
+  position: relative;
+  left: 20px;
+  top: 24px; }
+
+.landing #almari {
+  margin-top: 15%;
+  margin-bottom: 10%; }
 .landing #alm {
   font-size: 6em;
   font-family: 'Mr De Haviland', cursive;
@@ -117,7 +139,6 @@ body {
   background: #f25f5c; }
 
 #postDress {
-  margin-top: 80px;
   color: #333;
   overflow-x: hidden; }
   #postDress .postPhoto img {
@@ -212,19 +233,17 @@ body {
     height: 30px;
     position: relative; }
 
-#borrow {
-  margin-top: 80px; }
-  #borrow .question h2 {
-    font-size: 1.5em;
-    font-weight: 300;
-    color: #333; }
-  #borrow .swatches {
-    margin-top: 20px; }
-    #borrow .swatches .swatch {
+#borrow .question h2 {
+  font-size: 1.5em;
+  font-weight: 300;
+  color: #333; }
+#borrow .swatches {
+  margin-top: 20px; }
+  #borrow .swatches .swatch {
+    cursor: pointer; }
+    #borrow .swatches .swatch img {
+      width: 100%;
       cursor: pointer; }
-      #borrow .swatches .swatch img {
-        width: 100%;
-        cursor: pointer; }
 
 #borrowDresses {
   margin-top: 80px;
