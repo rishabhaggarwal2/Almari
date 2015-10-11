@@ -16,23 +16,20 @@ body {
   width:100%; 
 }
 
-.landing{
+.persistent-nav {
+  min-height: 70px;
+}
 
-  #almari{
-
-    margin-top: 15%;
-    margin-bottom: 10%;
-  }
-
-  #login{
+.persistent-nav {
+  #login {
+    display: inline-block;
     margin-top: 10px;
+    margin-left: 10px;
     background-color: #f25f5c;
     border: #f25f5c;
-    float:left;
   }
 
   .form-control{
-    margin-top: 10px;
     width: 30%;
     float: left;
     margin-left: 2%;
@@ -40,12 +37,11 @@ body {
   }
 
   .form-control-fancy {
-    margin-top: 10px;
     width: 25%;
     float: left;
     margin-left: 2%;
     margin-right: 2%;
-    display: block;
+    display: inline-block;
     height: 34px;
     border-radius: 0;
     border: none;
@@ -60,17 +56,20 @@ body {
   .form-control-fancy::-webkit-input-placeholder {
     transition: all 0.4s;
     transform: translate(0px, 0px);
+    opacity: 1;
   }
   .form-control-fancy:focus::-webkit-input-placeholder {
     transform: translate(0px, 34px);
+    opacity: 0;
   }
   .login-container {
     display: block;
+    margin-top: 10px
   }
   .login-buttons {
     position: absolute;
-    left: 72px;
-    top: 42px;
+    left: 28px;
+    top: 48px;
     width: 90%
   }
   .login-buttons .btn {
@@ -85,6 +84,32 @@ body {
     position: relative;
     top: 16px;
     left: 8px;
+  }
+  .nav-username {
+    display: inline;
+    color: $red;
+    border: 1px solid $red;
+    border-radius: 10%;
+    padding: 8px;
+    position: relative;
+    left: 10px;
+    top: 18px;
+    cursor: pointer;
+  }
+  .logout-btn {
+    display: none;
+    color: $red;
+    position: relative;
+    left: 20px;
+    top: 24px;
+  }
+}
+
+.landing{
+
+  #almari{
+    margin-top: 15%;
+    margin-bottom: 10%;
   }
 
   #alm{
@@ -165,7 +190,6 @@ body {
   background:$red;
 }
 #postDress{
-  margin-top: 80px;
   color:#333;
   overflow-x:hidden;
   .postPhoto{
@@ -298,6 +322,7 @@ body {
 #borrow{
   margin-top: 80px;
   padding-bottom: 80px;
+  
   .question{
     h2{
       font-size: 1.5em;
