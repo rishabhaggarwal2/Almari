@@ -18,6 +18,7 @@ body {
 
 .persistent-nav {
   min-height: 70px;
+  z-index: -4;
 }
 
 .persistent-nav {
@@ -86,22 +87,52 @@ body {
     left: 8px;
   }
   .nav-username {
-    display: inline;
+    z-index: 5;
+    overflow: hidden;
+    display: inline-block;
     color: $red;
     border: 1px solid $red;
     border-radius: 10%;
     padding: 8px;
     position: relative;
     left: 10px;
-    top: 18px;
+    top: 10px;
     cursor: pointer;
+    background: white;
+  }
+  .nav-username .fa-home {
+    position: absolute;
+    width: 100%;
+    transform: translate(20%, -150%);
+    transition: all 0.4s;
+  }
+  .nav-username-text {
+    z-index: -99;
+    display: inline-block;
+    transform: translateY(0px);
+    transition: all 0.4s;
+  }
+  .nav-username:hover .fa-home {
+    transform: translate(20%, -4px);
+  }
+  .nav-username:hover .nav-username-text{
+    transform: translateY(150%);
   }
   .logout-btn {
-    display: none;
+    z-index: 3;
+    opacity: 0;
     color: $red;
     position: relative;
     left: 20px;
-    top: 24px;
+    top: 10px;
+    transform: translateY(-30px);
+    transition: all 0.4s;
+    cursor: pointer;
+  }
+  .logout-btn.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
 
